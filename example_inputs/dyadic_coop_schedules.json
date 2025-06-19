@@ -1,0 +1,54 @@
+{
+    "experiments": [
+        {
+            "file_stub": "dyadic_coop_schedules",
+            "reps": 10,
+            "schedules": [
+                [
+                    {"mean": 60, "contingency": "Left-Left"},
+                    {"mean": 10, "contingency": "Right-Right"}
+                ],
+                [
+                    {"mean": 55, "contingency": "Left-Left"},
+                    {"mean": 15, "contingency": "Right-Right"}
+                ],
+                [
+                    {"mean": 50, "contingency": "Left-Left"},
+                    {"mean": 20, "contingency": "Right-Right"}
+                ],
+                [
+                    {"mean": 45, "contingency": "Left-Left"},
+                    {"mean": 25, "contingency": "Right-Right"}
+                ],
+                [
+                    {"mean": 40, "contingency": "Left-Left"},
+                    {"mean": 30, "contingency": "Right-Right"}
+                ],
+                [
+                    {"mean": 35, "contingency": "Left-Left"},
+                    {"mean": 35, "contingency": "Right-Right"}
+                ],
+                [
+                    {"mean": 30, "contingency": "Left-Left"},
+                    {"mean": 40, "contingency": "Right-Right"}
+                ],
+                [
+                    {"mean": 25, "contingency": "Left-Left"},
+                    {"mean": 45, "contingency": "Right-Right"}
+                ],
+                [
+                    {"mean": 20, "contingency": "Left-Left"},
+                    {"mean": 50, "contingency": "Right-Right"}
+                ],
+                [
+                    {"mean": 15, "contingency": "Left-Left"},
+                    {"mean": 55, "contingency": "Right-Right"}
+                ],
+                [
+                    {"mean": 10, "contingency": "Left-Left"},
+                    {"mean": 60, "contingency": "Right-Right"}
+                ]
+            ]
+        }
+    ]
+}
