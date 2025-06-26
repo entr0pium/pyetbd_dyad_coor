@@ -11,6 +11,11 @@ class TestOrganism(unittest.TestCase):
         self.organism.emit()
         self.assertTrue(self.organism.emitted in self.organism.population)
 
+    def test_emit_from_pop(self):
+        population = [1, 2, 3, 4]
+        result = self.organism.emit_from_pop(population)
+        self.assertIn(result, population)
+
     def test_init_population(self):
         self.organism.init_population()
         self.assertEqual(len(self.organism.population), self.organism.pop_size)

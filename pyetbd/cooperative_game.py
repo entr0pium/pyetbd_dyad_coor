@@ -62,37 +62,37 @@ class CooperativeGame:
         first_mover = self.coin_toss()
         second_mover = self.AO1 if first_mover == self.AO2 else self.AO2
 
-        # First mover emits behaviors from POP1 until a target behavior is produced
+        # First mover emits behaviors from pop1 until a target behavior is produced
         while True:
-            first_behavior = first_mover.emit_from_pop(first_mover.POP1)
+            first_behavior = first_mover.emit_from_pop(first_mover.pop1)
             first_move_type = self.evaluate_behavior(first_behavior)
             if first_move_type in ["Left-Move", "Right-Move"]:
                 break
 
         # Determine the second mover's population based on the first mover's behavior
         if first_move_type == "Left-Move":
-            second_behavior = second_mover.emit_from_pop(second_mover.POP2)
+            second_behavior = second_mover.emit_from_pop(second_mover.pop2)
             second_move_type = self.evaluate_behavior(second_behavior)
 
             if second_move_type == "Left-Move":
                 # Cooperation: Left-Left
                 reinforced = self.left_left_schedule.run(first_behavior)
-                self.update_populations(first_mover, second_mover, first_mover.POP1, second_mover.POP2, reinforced)
+                self.update_populations(first_mover, second_mover, first_mover.pop1, second_mover.pop2, reinforced)
             else:
                 # Non-cooperation: Left-Right
-                self.update_populations(first_mover, second_mover, first_mover.POP1, second_mover.POP2, False)
+                self.update_populations(first_mover, second_mover, first_mover.pop1, second_mover.pop2, False)
 
         elif first_move_type == "Right-Move":
-            second_behavior = second_mover.emit_from_pop(second_mover.POP3)
+            second_behavior = second_mover.emit_from_pop(second_mover.pop3)
             second_move_type = self.evaluate_behavior(second_behavior)
 
             if second_move_type == "Right-Move":
                 # Cooperation: Right-Right
                 reinforced = self.right_right_schedule.run(first_behavior)
-                self.update_populations(first_mover, second_mover, first_mover.POP1, second_mover.POP3, reinforced)
+                self.update_populations(first_mover, second_mover, first_mover.pop1, second_mover.pop3, reinforced)
             else:
                 # Non-cooperation: Right-Left
-                self.update_populations(first_mover, second_mover, first_mover.POP1, second_mover.POP3, False)
+                self.update_populations(first_mover, second_mover, first_mover.pop1, second_mover.pop3, False)
 
         # Return trial results
         return {
