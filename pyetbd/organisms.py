@@ -22,6 +22,11 @@ class Organism:
     def emit(self) -> None:
         self.emitted = np.random.choice(self.population)
 
+    def emit_from_pop(self, population):
+        """Emit a behavior sampled from the provided population."""
+        self.emitted = np.random.choice(population)
+        return self.emitted
+
     def init_population(self) -> None:
         self.population = np.random.randint(
             self.low_pheno, self.high_pheno, self.pop_size
